@@ -1,0 +1,44 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: JSON — plugin.json has required fields
+        run: |
+          jq -e '.name and .version and .description and .author' \
+            .claude-plugin/plugin.json > /dev/null
+
+      - name: JSON — marketplace.json has required fields
+        run: |
+          jq -e '.name and .description and .source' \
+            .claude-plugin/marketplace.json > /dev/null
+
+      - name: JSON — .mcp.json has mcpServers with a command
+        run: |
+          jq -e '(.mcpServers | length) > 0' .mcp.json > /dev/null
+          jq -e '[.mcpServers[].command] | all(. != null)' .mcp.json > /dev/null
+
+      - name: Markdown — frontmatter has description in all commands and skills
+        run: |
+          check() {
+            local file="$1"
+            if ! head -1 "$file" | grep -qx '---'; then
+              echo "FAIL: $file — missing opening ---"
+              exit 1
+            fi
+            if ! awk 'BEGIN{n=0} /^---$/{n++; next} n==1 && /^description:/{found=1} END{exit !found}' "$file"; then
+              echo "FAIL: $file — no description in frontmatter"
+              exit 1
+            fi
+            echo "OK: $file"
+          }
+          check commands/conclave-deliberate.md
+          check skills/conclave-deliberation/SKILL.md

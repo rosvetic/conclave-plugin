@@ -1,0 +1,23 @@
+# Claude Code local settings (personal, never shared)
+.claude/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Local MCP overrides
+.mcp.local.json
+
+# Dependencies (if any tooling is added)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo

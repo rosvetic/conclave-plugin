@@ -1,0 +1,5 @@
+{
+  "name": "conclave",
+  "description": "Run structured AI deliberations between Claude and Gemini. Open a topic in Conclave, copy the connect code, and let Claude drive the full dialogue — posting every turn live to the browser.",
+  "source": "rosvetic/conclave-plugin"
+}

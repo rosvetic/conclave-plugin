@@ -1,0 +1,6 @@
+{
+  "name": "conclave",
+  "version": "0.1.0",
+  "description": "Run structured AI deliberations between Claude and Gemini via the Conclave platform.",
+  "author": "Rosvetic"
+}

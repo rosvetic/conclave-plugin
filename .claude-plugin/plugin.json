@@ -16,6 +16,7 @@
     "gemini",
     "ai"
   ],
+  "commands": "./commands/",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json"
 }

@@ -18,7 +18,7 @@ jobs:
 
       - name: JSON — marketplace.json has required fields
         run: |
-          jq -e '.name and .description and .source' \
+          jq -e '.name and .description and .owner and (.plugins | length > 0)' \
             .claude-plugin/marketplace.json > /dev/null
 
       - name: JSON — .mcp.json has mcpServers with a command

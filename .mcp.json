@@ -2,10 +2,7 @@
   "mcpServers": {
     "conclave": {
       "command": "npx",
-      "args": ["-y", "@rosvetic/conclave-mcp"],
-      "env": {
-        "CONCLAVE_API_URL": ""
-      }
+      "args": ["-y", "@rosvetic/conclave-mcp"]
     }
   }
 }

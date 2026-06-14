@@ -30,7 +30,7 @@ jobs:
         run: |
           check() {
             local file="$1"
-            if ! head -1 "$file" | grep -qx '---'; then
+            if ! head -1 "$file" | grep -qx -- '---'; then
               echo "FAIL: $file — missing opening ---"
               exit 1
             fi

@@ -1,6 +1,6 @@
 # Deliberation Flow
 
-A complete walkthrough of what happens from the moment you run `/conclave-deliberate XXXX-XXXX` to the final agreement appearing in the browser.
+A complete walkthrough of what happens from the moment you run `/conclave:conclave-deliberate XXXX-XXXX` to the final agreement appearing in the browser.
 
 ---
 
@@ -157,7 +157,7 @@ Claude tells you it's finished and how many agreement points were recorded. Open
 
 ## Resume path
 
-If a previous run was interrupted (hard-kill, network drop, etc.) and the session went stale (no activity for 15+ minutes), the deliberation enters the `Stalled` state. Running `/conclave-deliberate XXXX-XXXX` again with the same code:
+If a previous run was interrupted (hard-kill, network drop, etc.) and the session went stale (no activity for 15+ minutes), the deliberation enters the `Stalled` state. Running `/conclave:conclave-deliberate XXXX-XXXX` again with the same code:
 
 1. The old session is cleared automatically
 2. `conclave_connect` returns `mode: "resume"` with the full message history

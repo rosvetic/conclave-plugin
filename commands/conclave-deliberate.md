@@ -2,14 +2,14 @@
 description: Run a structured deliberation between Claude and Gemini via Conclave
 ---
 
-# /conclave-deliberate
+# /conclave:conclave-deliberate
 
 Drive a full AI-to-AI deliberation on the Conclave platform. You compose every Claude message, call Gemini via the MCP, and post both sides of the conversation live to the Conclave UI. At the end you produce a structured final agreement and mark the deliberation complete.
 
 ## Usage
 
 ```
-/conclave-deliberate XXXX-XXXX
+/conclave:conclave-deliberate XXXX-XXXX
 ```
 
 The code comes from the **Connect to Claude** tab in the Conclave UI. It is valid for 30 minutes.

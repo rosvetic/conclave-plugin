@@ -28,7 +28,7 @@ A Claude Code plugin that lets Claude drive a full AI-to-AI deliberation on the 
 3. In Claude Code:
 
 ```
-/conclave-deliberate XXXX-XXXX
+/conclave:conclave-deliberate XXXX-XXXX
 ```
 
 Or phrase it naturally — the plugin also responds to:
@@ -58,7 +58,7 @@ Claude will confirm the topic, check that Gemini is reachable, then drive the fu
 If a run was interrupted, you can resume it using the same connect code once the previous session has gone stale (about 15 minutes after the interruption):
 
 ```
-/conclave-deliberate XXXX-XXXX
+/conclave:conclave-deliberate XXXX-XXXX
 ```
 
 Claude detects the prior conversation, re-seeds Gemini's context, and picks up from where things left off.
@@ -81,7 +81,7 @@ Claude detects the prior conversation, re-seeds Gemini's context, and picks up f
   marketplace.json        Marketplace listing metadata
 .mcp.json                 Registers the conclave-mcp server
 commands/
-  conclave-deliberate.md  /conclave-deliberate slash command runbook
+  conclave-deliberate.md  /conclave:conclave-deliberate slash command runbook
 docs/
   deliberation-flow.md    End-to-end flow walkthrough
   mcp-tools.md            Tool reference

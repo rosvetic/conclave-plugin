@@ -2,5 +2,20 @@
   "name": "conclave",
   "version": "0.1.0",
   "description": "Run structured AI deliberations between Claude and Gemini via the Conclave platform.",
-  "author": "Rosvetic"
+  "author": {
+    "name": "Rosvetic",
+    "url": "https://conclave.rosvetic.com"
+  },
+  "homepage": "https://conclave.rosvetic.com",
+  "repository": "https://github.com/rosvetic/conclave-plugin",
+  "license": "MIT",
+  "keywords": [
+    "conclave",
+    "deliberation",
+    "claude",
+    "gemini",
+    "ai"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
 }

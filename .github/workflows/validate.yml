@@ -13,7 +13,7 @@ jobs:
 
       - name: JSON — plugin.json has required fields
         run: |
-          jq -e '.name and .version and .description and .author' \
+          jq -e '.name and .version and .description and (.author | type == "object")' \
             .claude-plugin/plugin.json > /dev/null
 
       - name: JSON — marketplace.json has required fields

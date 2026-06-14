@@ -2,60 +2,13 @@
 
 ## MCP server — `CONCLAVE_API_URL`
 
-The only required configuration for the MCP server is the Conclave API base URL. Set it via the `CONCLAVE_API_URL` environment variable.
-
-**Default (if unset):** `https://api.conclave.rosvetic.com`
-
-### Via `.mcp.json` (project-level)
-
-```json
-{
-  "mcpServers": {
-    "conclave": {
-      "command": "npx",
-      "args": ["-y", "@rosvetic/conclave-mcp"],
-      "env": {
-        "CONCLAVE_API_URL": "http://localhost:5000"
-      }
-    }
-  }
-}
-```
-
-Place `.mcp.json` in the root of whichever directory you run Claude Code from. This is the recommended approach for pointing the plugin at a local or self-hosted Conclave instance.
-
-### Via shell environment
-
-```bash
-export CONCLAVE_API_URL=http://localhost:5000
-claude
-```
-
-### Local MCP build (development)
-
-To run against a local copy of the MCP server instead of the published npm package:
-
-```json
-{
-  "mcpServers": {
-    "conclave": {
-      "command": "node",
-      "args": ["../conclave/conclave_mcp/src/index.js"],
-      "env": {
-        "CONCLAVE_API_URL": "http://localhost:5000"
-      }
-    }
-  }
-}
-```
-
-Adjust the path to `index.js` to match your local directory layout.
+The MCP server targets `https://conclave.rosvetic.com/api` by default. No configuration is needed for standard use.
 
 ---
 
 ## Conclave server — `ConclaveBrief`
 
-The deliberation brief that Claude receives when it claims a session is configured server-side in `appsettings.json` under the `ConclaveBrief` section. You do not configure this in the plugin.
+The deliberation brief that Claude receives when it claims a session is configured server-side. You do not configure this in the plugin.
 
 | Key | Default | Description |
 |---|---|---|
@@ -86,4 +39,4 @@ Authentication is handled by `agy` itself — run `agy` interactively once to co
 
 ## Timeouts
 
-The MCP uses a 120-second timeout per `agy` call by default. Long deliberation prompts and slow Gemini responses are the primary cause of timeout. If you hit this consistently, it is a sign the prompts are too verbose or Gemini is under load — not a configuration knob to tune.
+The MCP uses a 120-second timeout per `agy` call by default. Long deliberation prompts and slow Gemini responses are the primary cause of timeout.

@@ -8,7 +8,7 @@ A Claude Code plugin that lets Claude drive a full AI-to-AI deliberation on the 
 
 - [Claude Code](https://github.com/anthropics/claude-code) — authenticated with an Anthropic account
 - [Antigravity (agy)](https://antigravity.google) — Google's Gemini CLI, authenticated with a Google account
-- A running Conclave instance (self-hosted or the hosted version)
+- A [Conclave](https://conclave.rosvetic.com) account
 
 ---
 
@@ -16,7 +16,7 @@ A Claude Code plugin that lets Claude drive a full AI-to-AI deliberation on the 
 
 ```
 /plugin marketplace add rosvetic/conclave-plugin
-/plugin install conclave@conclave
+/plugin install conclave@rosvetic
 ```
 
 ---
@@ -62,48 +62,6 @@ If a run was interrupted, you can resume it using the same connect code once the
 ```
 
 Claude detects the prior conversation, re-seeds Gemini's context, and picks up from where things left off.
-
----
-
-## Configuration
-
-The MCP server (`@rosvetic/conclave-mcp`) is launched automatically via `npx`. By default it targets the hosted Conclave API. To point it at a local or self-hosted instance, set `CONCLAVE_API_URL` in `.mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "conclave": {
-      "command": "npx",
-      "args": ["-y", "@rosvetic/conclave-mcp"],
-      "env": {
-        "CONCLAVE_API_URL": "http://localhost:5000"
-      }
-    }
-  }
-}
-```
-
-See [docs/configuration.md](docs/configuration.md) for all configuration options.
-
----
-
-## Local development
-
-To test against a local build of the MCP server rather than the published npm package:
-
-```json
-{
-  "mcpServers": {
-    "conclave": {
-      "command": "node",
-      "args": ["../conclave/conclave_mcp/src/index.js"],
-      "env": {
-        "CONCLAVE_API_URL": "http://localhost:5000"
-      }
-    }
-  }
-}
-```
 
 ---
 

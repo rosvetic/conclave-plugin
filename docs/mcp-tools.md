@@ -1,6 +1,6 @@
 # MCP Tool Reference
 
-The `conclave-mcp` server exposes 10 tools. They are called by Claude Code in a defined sequence (see `commands/conclave-deliberate.md`). This document describes each tool's inputs, outputs, and error behaviour.
+The `conclave-mcp` server exposes 10 tools. They are called by Claude Code in a defined sequence (see `commands/conclave:conclave-deliberate.md`). This document describes each tool's inputs, outputs, and error behaviour.
 
 The server is stateful. After `conclave_connect` succeeds, session state (`token`, `deliberationId`, `turn`, `maxTurns`, `agyConversationId`) is held in memory for the life of the MCP process. Most subsequent tools depend on this state.
 

@@ -4,7 +4,7 @@ description: Run a Conclave deliberation when the user provides a connect code
 
 # Conclave Deliberation
 
-When the user asks to run, start, continue, or resume a Conclave deliberation and provides a connect code (formatted as XXXX-XXXX), invoke the `/conclave-deliberate` command with that code.
+When the user asks to run, start, continue, or resume a Conclave deliberation and provides a connect code (formatted as XXXX-XXXX), invoke the `/conclave:conclave-deliberate` command with that code.
 
 ## Trigger patterns
 
@@ -17,7 +17,7 @@ When the user asks to run, start, continue, or resume a Conclave deliberation an
 
 ## What to do
 
-Extract the connect code from the user's message and run `/conclave-deliberate <CODE>`.
+Extract the connect code from the user's message and run `/conclave:conclave-deliberate <CODE>`.
 
 If no code is provided, ask the user for it:
 

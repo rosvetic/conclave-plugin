@@ -2,7 +2,7 @@
   "mcpServers": {
     "conclave": {
       "command": "npx",
-      "args": ["-y", "@rosvetic/conclave-mcp"]
+      "args": ["-y", "--prefer-online", "@rosvetic/conclave-mcp@latest"]
     }
   }
 }
